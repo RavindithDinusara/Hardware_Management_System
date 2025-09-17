@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0b533325-8bfc-4fb0-b7b5-79360c872632">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.util.Date"/>
+	<parameter name="toDate" class="java.util.Date"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    ii.issue_date, 
+    ii.Quantity AS volume, 
+    ii.total_price, 
+    i.Iname AS item_name, 
+    c.name AS customer_name
+FROM 
+    issueitem ii
+JOIN 
+    items i ON ii.Item_id = i.Item_id
+JOIN 
+    customer c ON ii.customer_id = c.customer_id
+WHERE 
+    DATE(ii.issue_date) BETWEEN DATE($P{fromDate}) AND DATE($P{toDate})]]>
+	</queryString>
+	<field name="issue_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="volume" class="java.lang.Integer"/>
+	<field name="total_price" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="124" y="23" width="293" height="35" backcolor="#FFFFFF" uuid="065d0d10-d069-4c7f-a448-49874d9c3e56"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Distribution Report]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="71" width="554" height="1" uuid="6fa7526c-8f3c-4a19-8295-9ca6dfd199be"/>
+			</line>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" uuid="222edf06-9960-44b3-8f72-a64729aa13d8"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="396" y="76" width="142" height="20" uuid="c16c5ac3-b329-44a2-beef-d7c71b279de2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Colombo 9.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="224" height="40" uuid="6fdc5dc8-5c03-4abe-be5c-b9b6c77f6e12"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNC Trade Centre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="76" width="295" height="20" uuid="afca0672-17a5-4eb2-94da-50fa4bfc2f5a"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tel : 0112347546 / 0112438256]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="50" width="295" height="20" uuid="e17233f3-33ad-43d0-8b29-8bb8a022b0ca"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporting Period: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="59" width="142" height="20" uuid="111e5670-8646-4ef3-b723-3d67c9afe957"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NO : 33/1A Main streeet,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="36" width="108" height="20" uuid="3955bccf-270c-461e-9e9a-1b0981d98e07"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[UNC Trade Centre,]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20" uuid="910e82d3-ffed-47bb-91c4-da65049432e0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[issue_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="10" width="100" height="20" uuid="b7ccceb9-8911-4223-939d-4a3ab367ffbf"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="11" width="100" height="20" uuid="72b12c18-4717-4e78-8a0c-0a89a640ba70"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="10" width="89" height="20" uuid="0f3f2936-f66f-442d-b69c-af036159f561"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="11" width="110" height="20" uuid="6d2e922e-4566-4819-89a3-2eda28a5fdd3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="20" uuid="41529bbf-2f4d-4be5-9f22-6007f257dcaf"/>
+				<textFieldExpression><![CDATA[$F{issue_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="10" width="100" height="20" uuid="d11f0c9d-340c-4f44-ba71-bb955372398b"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="10" width="66" height="20" uuid="0b984a1d-2356-4900-be48-84f33d78bb51"/>
+				<textFieldExpression><![CDATA[$F{volume}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="10" width="89" height="20" uuid="3a92e129-c71e-488c-900d-5cc58f57db66"/>
+				<textFieldExpression><![CDATA[$F{total_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="10" width="114" height="20" uuid="898e2fde-4b26-4652-8061-7db4a1993440"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="53" height="20" uuid="a413a5f0-20e4-4476-a9be-8badf951c6cf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ DATE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="10" width="203" height="20" uuid="aed414e4-39c6-4123-9925-ff22dbfaa4a0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Certified by:....................................]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="142" height="25" uuid="358532f4-e57f-44b9-bd25-d78d71593448"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Executive Summary
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
