@@ -35,22 +35,22 @@ This system manages **items, customers, sales (issued items), and reporting** wi
 ## 📸 Screenshots
 
 🔐 **Login Page**  
-![Login Page](https://via.placeholder.com/900x500.png?text=Login+Page)
+![Login Page](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20175748.png)
 
 🖥️ **Dashboard**  
-![Dashboard](https://via.placeholder.com/900x500.png?text=Dashboard)
+![Dashboard](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20175823.png)
 
 📦 **Items Management**  
-![Items](https://via.placeholder.com/900x500.png?text=Items+Management)
+![Items](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20175845.png)
 
 👥 **Customer Management**  
-![Customers](https://via.placeholder.com/900x500.png?text=Customer+Management)
+![Customers](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20175912.png)
 
 📤 **Issue Items (Sales)**  
-![Issue Items](https://via.placeholder.com/900x500.png?text=Issue+Items)
+![Issue Items](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20175936.png)
 
 📊 **Sales Distribution Report (Date Range)**  
-![Reports](https://via.placeholder.com/900x500.png?text=Sales+Distribution+Report)
+![Reports](https://github.com/RavindithDinusara/Hardware_Management_System/blob/main/img/Screenshot%202025-09-17%20180013.png)
 
 
 ---
