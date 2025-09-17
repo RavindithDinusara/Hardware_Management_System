@@ -1,0 +1,7 @@
+
+*.java linguist-detectable=true
+
+
+dist/* linguist-vendored
+node_modules/* linguist-vendored
+*.min.js linguist-vendored
